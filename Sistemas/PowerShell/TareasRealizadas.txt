@@ -1,0 +1,4 @@
+06/06
+
+Creacion de apuntes para powershell
+Ejercicio 1, hasta ejercicio 1.8 (sin terminar)
