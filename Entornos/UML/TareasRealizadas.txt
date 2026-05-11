@@ -1,0 +1,5 @@
+11/05
+
+Realizacion primera parte ExamenDeHealthCare:
+
+	Creacion de Clases, atributos, relaciones, herencias (por 	revisar)
