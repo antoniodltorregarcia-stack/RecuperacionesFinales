@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Comando
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ mostrarMenu()
+comment3.params=
+comment3.target=void\ escribirTexto()
+comment4.params=entrada
+comment4.target=void\ contenido(java.lang.String)
+comment5.params=entrada\ letraClave
+comment5.target=void\ comandoT(java.lang.String,\ char)
+comment6.params=entrada\ letraClave
+comment6.target=void\ comandoD(java.lang.String,\ char)
+comment7.params=entrada\ letraClave
+comment7.target=void\ comandoF(java.lang.String,\ char)
+numComments=8
