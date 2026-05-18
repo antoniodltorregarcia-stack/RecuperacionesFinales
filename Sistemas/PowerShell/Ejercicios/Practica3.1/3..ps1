@@ -1,0 +1,1 @@
+﻿Move-Item -Path "C:\Users\anton\Desktop\RecuperacionesFinales\Sistemas\PowerShell\Ejercicios\Practica3.1\archivo2.txt" -Destination "C:\Users\anton\Desktop\archivo2.txt"
