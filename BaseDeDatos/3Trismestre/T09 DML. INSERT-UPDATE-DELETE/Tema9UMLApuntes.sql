@@ -86,4 +86,4 @@ update producto set precio = precio * 1.1 where codigo_fabricante in
 select @@sql_safe_updates; -- ver seguridad
 set sql_safe_updates = 0; -- cambiarla pa reventarlo to
 
-
+  ----------------------------------------------------------------------------- 
