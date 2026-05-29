@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Vehiculo
+comment1.params=matricula\ anioFabricacion\ descripcionModelo
+comment1.target=Vehiculo(java.lang.String,\ int,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getMatricula()
+comment3.params=matricula
+comment3.target=void\ setMatricula(java.lang.String)
+comment4.params=
+comment4.target=int\ getAnioFabricacion()
+comment5.params=anioFabricacion
+comment5.target=void\ setAnioFabricacion(int)
+comment6.params=
+comment6.target=java.lang.String\ getDescripcionModelo()
+comment7.params=descripcionModelo
+comment7.target=void\ setDescripcionModelo(java.lang.String)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

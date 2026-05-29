@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Controlador
+comment1.params=
+comment1.target=Controlador()
+comment10.params=
+comment10.target=void\ listarClientesOrdenados()
+comment11.params=
+comment11.target=void\ listarTrabajosTerminados()
+comment12.params=
+comment12.target=void\ listarTrabajosNoTerminados()
+comment2.params=
+comment2.target=Controlador\ getInstancia()
+comment3.params=
+comment3.target=modelo.Taller\ getTaller()
+comment4.params=dni\ nombre\ apellidos\ email\ telefono
+comment4.target=void\ addCliente(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment5.params=dni\ nombre\ apellidos\ email\ telefono\ anioLlegada
+comment5.target=void\ addMecanico(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
+comment6.params=v
+comment6.target=void\ addVehiculo(modelo.Vehiculo)
+comment7.params=descripcion\ costePiezas\ horas\ dniMecanico\ matriculaVehiculo
+comment7.target=void\ crearTrabajo(java.lang.String,\ double,\ int,\ java.lang.String,\ java.lang.String)
+comment8.params=codigoTrabajo
+comment8.target=void\ marcarTerminado(java.lang.String)
+comment9.params=codigoTrabajo
+comment9.target=void\ marcarCobrado(java.lang.String)
+numComments=13

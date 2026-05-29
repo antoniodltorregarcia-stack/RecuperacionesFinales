@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Furgon
+comment1.params=matricula\ anioFabricacion\ descripcionModelo
+comment1.target=Furgon(java.lang.String,\ int,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3

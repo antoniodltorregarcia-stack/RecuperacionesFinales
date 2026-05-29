@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Mecanico
+comment1.params=dni\ nombre\ apellidos\ email\ telefono\ anioLlegada
+comment1.target=Mecanico(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
+comment2.params=
+comment2.target=int\ getAnioLlegada()
+comment3.params=anioLlegada
+comment3.target=void\ setAnioLlegada(int)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5
