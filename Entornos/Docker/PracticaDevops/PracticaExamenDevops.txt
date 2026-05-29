@@ -1,0 +1,181 @@
+Apartado A
+
+
+1. Clonar proyecto original y crear tu repo sin historia
+
+- Clonar el repositorio del examen:
+
+$ git clone git@github.com:andresalcarazrey/endes_abril_2026_devops.git
+
+- Entramos a la carpeta
+
+$ cd endes_abril_2026_devops/
+
+- Eliminamos la carpeta .git 
+
+$ rm -rf .git
+
+- Creamos el repo en github (chrome)
+
+...
+
+- Iniciamos el git y lo enlazamos al repo
+
+git init
+git add .
+git commit -m "Proyecto inicial sin historial"
+git branch -M main
+git remote add origin git@github.com:TU_USUARIO/endes_abril_2026_devops_antonio.git
+git push -u origin main
+
+2. Añadir dependencias GSon y JUnit Jupiter
+
+- Buscamos la dependencia de Junit y la modificamos con lo que nos pida el enunciado
+
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.6.0</version>
+    <scope>test</scope>
+</dependency>
+
+- En este caso el Gson estan igual no cambiamos nada
+
+<dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.13.2</version>
+</dependency>
+
+3. Compilar y empaquetar con Maven
+
+- volvemos al terminal y ejecutamos...
+
+mvn clean package (nos debe salir una pila cosas)
+
+/*
+clean: Borra la carpeta target.
+
+package: Compila, ejecuta tests y genera el artefacto (.jar o .war) en target/.
+*/
+
+4. Subir cambios a tu repositorio remoto
+
+git status
+git add pom.xml
+git add .   # si hay más cambios
+git commit -m "Añadidas dependencias GSon y JUnit Jupiter, compilado con Maven"
+git push
+
+Apartado B
+
+1. Descargar el docker-compose del repositorio
+
+$ git clone git@github.com:andresalcarazrey/devops_tomcat_doble_dockercompose.git
+
+2. Levantar servidores y desplegar la webapp como raíz
+
+- Nos pasamos a powershell (administrador y con docker abierto)
+
+- Pillamos la ruta
+
+C:\Users\anton\Desktop\RecuperacionesFinales\Entornos\Docker\PracticaDevops\devops_tomcat_doble_dockercompose (copiarla de la carpeta)
+
+- Ejecutamos el comando ...
+
+docker compose up -d
+
+- Nos deberia salir esto
+
+time="2026-05-29T12:23:14+02:00" level=warning msg="C:\\Users\\anton\\Desktop\\RecuperacionesFinales\\Entornos\\Docker\\PracticaDevops\\devops_tomcat_doble_dockercompose\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+[+] up 3/3
+ ✔ Network devops_tomcat_doble_dockercompose_default         Created                                0.1s
+ ✔ Container devops_tomcat_doble_dockercompose-espejoweb-1   Started                                0.9s
+ ✔ Container devops_tomcat_doble_dockercompose-servidorweb-1 Started                                0.9s
+
+- Ejecutamos el comando dir para verificar que todo bien deberia salir
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        29/05/2026     12:23                espejo
+d-----        29/05/2026     12:23                web
+-a----        29/05/2026     12:07             19 .gitignore
+-a----        29/05/2026     12:07            284 docker-compose.yml (Este esel importante)
+
+-Ejecutamos docker ps para comprobar que estan arriba
+
+docker ps
+
+CONTAINER ID   IMAGE        COMMAND                  CREATED              STATUS              PORTS                                         NAMES
+52ca2a10e501   tomcat:9.0   "catalina.sh run"        About a minute ago   Up About a minute   0.0.0.0:8888->8080/tcp, [::]:8888->8080/tcp   devops_tomcat_doble_dockercompose-espejoweb-1
+b7cc0de67427   tomcat:9.0   "catalina.sh run"        About a minute ago   Up About a minute   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp   devops_tomcat_doble_dockercompose-servidorweb-1
+f7d34986770b   mysql:8.0    "docker-entrypoint.s…"   4 weeks ago          Up 12 minutes       3306/tcp                                      infraestructura-bbdd-1
+
+
+- En el comando de arriba nos especifica que el puerto es 8080
+
+Ponemos en chrome (http://localhost:8080/)
+
+(deberia salir asi por ahora)
+
+Estado HTTP 404 – No encontrado
+Tipo Informe de estado
+
+Descripción El recurso requerido no está disponible.
+
+-- Volvemos a la carpeta de antes
+
+C:\Users\anton\Desktop\RecuperacionesFinales\Entornos\Docker\PracticaDevops\endes_abril_2026_devops
+
+-- Ejecutamos y generamos gracias a este un .war
+
+mvn clean package
+
+-- Nos metemos en target para ver que se crea un archivo como
+
+ejemplo.war
+
+-- Ir a la carpeta donde está el WAR
+
+cd "C:\Users\anton\Desktop\RecuperacionesFinales\Entornos\Docker\PracticaDevops\endes_abril_2026_devops\target"
+
+-- comprobamos con dir
+
+  Directorio: C:\Users\anton\Desktop\RecuperacionesFinales\Entornos\Docker\PracticaDevops\endes_abril
+    _2026_devops\target
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        29/05/2026     12:52                classes
+d-----        29/05/2026     12:52                ejemplo
+d-----        29/05/2026     12:52                generated-sources
+d-----        29/05/2026     12:52                maven-archiver
+d-----        29/05/2026     12:52                maven-status
+-a----        29/05/2026     12:52        3865231 ejemplo.war
+
+-- Copiar el WAR al Tomcat principal (8080)
+
+docker cp ejemplo.war devops_tomcat_doble_dockercompose-servidorweb-1:/usr/local/tomcat/webapps/ROOT.war (successfully copied)
+
+-- Copiar el WAR al Tomcat espejo (8888)
+
+docker cp ejemplo.war devops_tomcat_doble_dockercompose-espejoweb-1:/usr/local/tomcat/webapps/ROOT.war (successfully copied)
+
+-- Reiniciamos contenedores
+
+docker restart devops_tomcat_doble_dockercompose-servidorweb-1
+
+docker restart devops_tomcat_doble_dockercompose-espejoweb-1
+
+-- Probamos en el navegador
+
+PASO 5 — Probar en el navegador
+
+http://localhost:8080 
+
+http://localhost:8888
+
+(deberia cargar sin problema)
+
+

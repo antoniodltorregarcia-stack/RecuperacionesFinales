@@ -1,0 +1,142 @@
+---
+
+APARTADO A — MAVEN + GITHUB
+
+1. Clonar proyecto original y crear repositorio sin historial
+
+Clonar el repositorio del examen:
+
+	git clone git@github.com:andresalcarazrey/endes_abril_2026	_devops.git
+
+Entrar a la carpeta
+
+	cd endes_abril_2026_devops/
+
+Eliminar la carpeta .git:
+
+	rm -rf .git
+
+Crear el repositorio nuevo en GitHub (desde el navegador).
+
+	Inicializar y enlazar el nuevo repositorio:
+
+	git init
+	git add .
+	git commit -m "Proyecto inicial sin historial"
+	git branch -M main
+	git remote add origin git@github.com:TU_USUARIO/endes_abril_2026_devops_antonio.git
+	git push -u origin main
+
+2. Añadir dependencias Gson y JUnit Jupiter
+
+Dependencia JUnit Jupiter:
+
+	<dependency>
+ 	   <groupId>org.junit.jupiter</groupId>
+ 	   <artifactId>junit-jupiter</artifactId>
+ 	   <version>5.6.0</version>
+ 	   <scope>test</scope>
+	</dependency>
+
+Dependencia Gson:
+
+	<dependency>
+   		<groupId>com.google.code.gson</groupId>
+   	 	<artifactId>gson</artifactId>
+   		<version>2.13.2</version>
+	</dependency>
+
+3. Compilar y empaquetar con Maven
+
+	mvn clean package
+
+	clean borra la carpeta target.  
+	package compila, ejecuta tests y genera el archivo .war en target/.
+
+4. Subir cambios al repositorio remoto
+
+	git status
+	git add pom.xml
+	git add .
+	git commit -m "Añadidas dependencias Gson y JUnit Jupiter, compilado con Maven"
+	git push
+
+---
+
+APARTADO B — DOCKER + TOMCAT DOBLE
+
+1. Descargar el docker-compose del repositorio
+
+	git clone git@github.com:andresalcarazrey/devops_tomcat_doble_dockercompose.git
+
+2. Levantar los servidores Tomcat
+
+	Ir a la carpeta del docker-compose:
+	C:\Users\anton\Desktop\RecuperacionesFinales\Entornos\Docker\PracticaDevops\devops_tomcat_doble_dockercompose
+
+Levantar contenedores:
+
+	docker compose up -d
+
+Salida esperada:
+
+	✔ Container ...espejoweb-1 Started
+	✔ Container ...servidorweb-1 Started
+
+3. Verificar contenedores activos
+
+	docker ps
+
+Puertos esperados:
+
+	servidorweb → 8080  
+	espejoweb → 8888
+
+4. Comprobar funcionamiento inicial en navegador
+
+	http://localhost:8080  
+	Debe aparecer un error 404 (correcto antes de desplegar el WAR).
+
+5. Generar el archivo WAR del proyecto Java
+
+Ir al proyecto Java:
+
+	C:\Users\anton\Desktop\RecuperacionesFinales\Entornos\Docker\PracticaDevops\endes_abril_2026_devops
+
+Compilar:
+
+	mvn clean package
+
+Verificar que se genera el WAR en target/:
+
+	ejemplo.war
+
+6. Copiar el WAR a los Tomcat como ROOT.war
+
+Ir a la carpeta target:
+
+	cd "C:\Users\anton\Desktop\RecuperacionesFinales\Entornos\Docker\PracticaDevops\endes_abril_2026_devops\target"
+
+Copiar al Tomcat principal (8080):
+
+	docker cp ejemplo.war devops_tomcat_doble_dockercompose-servidorweb-1:/usr/local/tomcat/webapps/ROOT.war
+
+Copiar al Tomcat espejo (8888):
+
+	docker cp ejemplo.war devops_tomcat_doble_dockercompose-espejoweb-1:/usr/local/tomcat/webapps/ROOT.war
+
+7. Reiniciar contenedores
+
+	docker restart devops_tomcat_doble_dockercompose-servidorweb-1
+
+	docker restart devops_tomcat_doble_dockercompose-espejoweb-1
+
+8. Probar en el navegador
+
+	http://localhost:8080  
+
+	http://localhost:8888  
+
+La aplicación debe cargar correctamente.
+
+---
