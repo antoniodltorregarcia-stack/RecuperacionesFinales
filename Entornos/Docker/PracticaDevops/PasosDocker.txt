@@ -27,7 +27,7 @@ Crear el repositorio nuevo en GitHub (desde el navegador).
 	git remote add origin git@github.com:TU_USUARIO/endes_abril_2026_devops_antonio.git
 	git push -u origin main
 
-2. Añadir dependencias Gson y JUnit Jupiter
+2. Añadir dependencias Gson y JUnit Jupiter (POM)
 
 Dependencia JUnit Jupiter:
 

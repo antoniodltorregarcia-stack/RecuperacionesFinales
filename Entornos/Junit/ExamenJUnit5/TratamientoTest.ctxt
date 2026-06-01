@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=TratamientoTest
+comment1.params=
+comment1.target=void\ CreacionTratamiento()
+comment2.params=
+comment2.target=void\ NoEsLargo()
+comment3.params=
+comment3.target=void\ SiEsLargo()
+comment4.params=
+comment4.target=void\ aplicarDescuento0()
+comment5.params=
+comment5.target=void\ aplicarDescuento10()
+numComments=6

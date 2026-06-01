@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Paciente
+comment1.params=dni\ nombre\ edad
+comment1.target=Paciente(java.lang.String,\ java.lang.String,\ int)
+comment2.params=
+comment2.target=java.lang.String\ getDni()
+comment3.params=
+comment3.target=java.lang.String\ getNombre()
+comment4.params=
+comment4.target=int\ getEdad()
+comment5.params=
+comment5.target=boolean\ esMayorDeEdad()
+numComments=6

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=AlumnoTest
+comment1.params=
+comment1.target=void\ CrearAlumno()
+comment2.params=
+comment2.target=void\ esMayorDeEdadTrue()
+comment3.params=
+comment3.target=void\ esMayorDeEdadFalse()
+comment4.params=
+comment4.target=void\ tieneNotaAprobadaTrue()
+comment5.params=
+comment5.target=void\ tieneNotaAprobadaFalse()
+numComments=6

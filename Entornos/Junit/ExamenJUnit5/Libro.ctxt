@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Libro
+comment1.params=isbn\ titulo\ numeroPaginas\ precio
+comment1.target=Libro(java.lang.String,\ java.lang.String,\ int,\ double)
+comment2.params=
+comment2.target=java.lang.String\ getIsbn()
+comment3.params=
+comment3.target=java.lang.String\ getTitulo()
+comment4.params=
+comment4.target=int\ getNumeroPaginas()
+comment5.params=
+comment5.target=double\ getPrecio()
+comment6.params=
+comment6.target=boolean\ esLibroLargo()
+comment7.params=porcentajeIVA
+comment7.target=double\ aplicarIVA(double)
+numComments=8
