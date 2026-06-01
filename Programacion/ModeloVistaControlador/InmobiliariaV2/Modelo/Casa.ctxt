@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Casa
+comment1.params=codigoIdentificador\ direccion\ metrosCuadrados\ precio\ numeroPlantas\ jardin
+comment1.target=Casa(java.lang.String,\ java.lang.String,\ int,\ double,\ int,\ boolean)
+comment2.params=
+comment2.target=int\ getNumeroPlantas()
+comment3.params=numeroPlantas
+comment3.target=void\ setNumeroPlantas(int)
+comment4.params=
+comment4.target=boolean\ getJardin()
+comment5.params=jardin
+comment5.target=void\ setJardin(boolean)
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7
