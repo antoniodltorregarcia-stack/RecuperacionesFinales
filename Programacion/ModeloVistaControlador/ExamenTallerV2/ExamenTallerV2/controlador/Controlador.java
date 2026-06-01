@@ -2,7 +2,7 @@ package controlador;
 
 import modelo.*;
 
-public class Controlador{
+public class Controlador{  //Actua de puente entre vista y modelo 
     private static Controlador instancia = null;
     
     private Taller taller; //referencia al modelo
@@ -72,9 +72,9 @@ public class Controlador{
     
     //Listar clientes ordenador por dni 
     public void listarClientesOrdenados() {
-        taller.getMapaClientes().values().stream()
-            .sorted((c1, c2) -> c1.getDni().compareTo(c2.getDni()))
-            .forEach(System.out::println);
+        taller.getMapaClientes().values().stream() //devuelve todos los objetos de cliente y la vuelve stream para poder ordenarla
+            .sorted((c1, c2) -> c1.getDni().compareTo(c2.getDni())) //compara 2 clientes y los ordena
+            .forEach(System.out::println); //recorre el stream y lo imprime
     }
     
     //Listar trabajos Terminados y sin terminar
