@@ -1,5 +1,7 @@
 #BlueJ class context
-comment0.target=Vista
+comment0.target=main
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment2.params=
+comment2.target=void\ mostrarMenu()
+numComments=3

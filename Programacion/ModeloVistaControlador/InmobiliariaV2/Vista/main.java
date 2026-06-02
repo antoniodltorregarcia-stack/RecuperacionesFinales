@@ -5,9 +5,14 @@ import Controlador.*;
 
 import java.util.Scanner;
 
-public class Vista {
+public class main { //Importante no llamarlo igual que el paquete
 
-    public static void main(String[]args) {
+    public static void main(String[] args) {
+        mostrarMenu();
+    }
+
+    public static void mostrarMenu() {
+
 
         Scanner sc = new Scanner(System.in);
         Controlador controlador = Controlador.getInstancia();
@@ -32,7 +37,6 @@ public class Vista {
 
             switch (opcion) {
 
-                // 1. Alta inmueble
                 case 1:
                     System.out.println("Opción 1: alta inmueble");
                     System.out.println("Elige el tipo de Inmueble:");
@@ -56,29 +60,28 @@ public class Vista {
                     if (tipo == 1) {
                         System.out.print("Número de plantas: ");
                         int numeroPlantas = sc.nextInt();
-                    
+
                         System.out.print("¿Tiene jardín? (true/false): ");
                         boolean jardin = sc.nextBoolean();
-                        sc.nextLine(); // <<--- AÑADE ESTO PARA LIMPIAR EL BÚFER
-                    
+                        sc.nextLine();
+
                         controlador.altaCasa(codigoInmueble, direccion, metrosCuadrados, precio, numeroPlantas, jardin);
                         System.out.println("Casa dada de alta correctamente.");
-                    
+
                     } else if (tipo == 2) {
                         System.out.print("Número de planta: ");
                         int numeroPlanta = sc.nextInt();
-                    
+
                         System.out.print("¿Tiene ascensor? (true/false): ");
                         boolean ascensor = sc.nextBoolean();
-                        sc.nextLine(); // <<--- AÑADE ESTO PARA LIMPIAR EL BÚFER
-                    
+                        sc.nextLine();
+
                         controlador.altaPiso(codigoInmueble, direccion, metrosCuadrados, precio, numeroPlanta, ascensor);
                         System.out.println("Piso dado de alta correctamente.");
                     }
 
                     break;
 
-                // 2. Eliminar inmueble
                 case 2:
                     System.out.println("Opción 2: retirar inmueble vendido del sistema");
 
@@ -94,25 +97,21 @@ public class Vista {
                     }
                     break;
 
-                // 3. Listar todos los inmuebles
                 case 3:
                     System.out.println("Opción 3: mostrar todos los inmuebles");
                     controlador.listarInmuebles();
                     break;
 
-                // 4. Listar solo casas
                 case 4:
                     System.out.println("Opción 4: mostrar solo casas");
                     controlador.listarSoloCasas();
                     break;
 
-                // 5. Listar solo pisos
                 case 5:
                     System.out.println("Opción 5: mostrar solo pisos");
                     controlador.listarSoloPisos();
                     break;
 
-                // 6. Alta cliente
                 case 6:
                     System.out.println("Opción 6: alta cliente");
 
@@ -129,7 +128,6 @@ public class Vista {
                     System.out.println("Cliente dado de alta correctamente.");
                     break;
 
-                // 7. Añadir favorito
                 case 7:
                     System.out.println("Opción 7: añadir inmueble favorito a un cliente");
 
@@ -143,10 +141,11 @@ public class Vista {
 
                     if (añadido) {
                         System.out.println("Inmueble añadido a favoritos.");
+                    } else {
+                        System.out.println("No se pudo añadir el favorito.");
                     }
                     break;
 
-                // 8. Mostrar favoritos
                 case 8:
                     System.out.println("Opción 8: mostrar favoritos de un cliente");
 
@@ -156,7 +155,6 @@ public class Vista {
                     controlador.listarFavoritos(dniMostrar);
                     break;
 
-                // Salir
                 case 0:
                     System.out.println("Saliendo del programa...");
                     break;
@@ -168,5 +166,7 @@ public class Vista {
             System.out.println();
 
         } while (opcion != 0);
+
+        sc.close();
     }
 }
