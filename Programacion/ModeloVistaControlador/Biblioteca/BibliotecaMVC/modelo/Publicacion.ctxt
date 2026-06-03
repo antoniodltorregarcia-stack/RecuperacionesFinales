@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Publicacion
+comment1.params=codigoId\ titulo\ numeroPaginas\ precio
+comment1.target=Publicacion(java.lang.String,\ java.lang.String,\ int,\ double)
+comment10.params=
+comment10.target=java.lang.String\ toString()
+comment2.params=
+comment2.target=java.lang.String\ getCodigoId()
+comment3.params=codigoId
+comment3.target=void\ setCodigoId(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getTitulo()
+comment5.params=titulo
+comment5.target=void\ setTitulo(java.lang.String)
+comment6.params=
+comment6.target=int\ getNumeroPaginas()
+comment7.params=numeroPaginas
+comment7.target=void\ setNumeroPaginas(int)
+comment8.params=
+comment8.target=double\ getPrecio()
+comment9.params=precio
+comment9.target=void\ setPrecio(double)
+numComments=11

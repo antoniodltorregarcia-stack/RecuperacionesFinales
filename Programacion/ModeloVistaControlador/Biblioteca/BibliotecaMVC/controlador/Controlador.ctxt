@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Controlador
+comment1.params=
+comment1.target=Controlador()
+comment10.params=dni\ codigoId
+comment10.target=boolean\ addFavorito(java.lang.String,\ java.lang.String)
+comment11.params=dni
+comment11.target=void\ listarFavoritos(java.lang.String)
+comment2.params=
+comment2.target=Controlador\ getInstancia()
+comment3.params=codigoId\ titulo\ numeroPaginas\ precio\ autor\ genero
+comment3.target=void\ altaLibro(java.lang.String,\ java.lang.String,\ int,\ double,\ java.lang.String,\ java.lang.String)
+comment4.params=codigoId\ titulo\ numeroPaginas\ precio\ numeroEdicion\ mensual
+comment4.target=void\ altaRevista(java.lang.String,\ java.lang.String,\ int,\ double,\ int,\ boolean)
+comment5.params=codigoId
+comment5.target=boolean\ eliminarPublicacion(java.lang.String)
+comment6.params=
+comment6.target=void\ listarPublicaciones()
+comment7.params=
+comment7.target=void\ listarLibros()
+comment8.params=
+comment8.target=void\ listarRevistas()
+comment9.params=dni\ nombre\ telefono
+comment9.target=void\ altaCliente(java.lang.String,\ java.lang.String,\ java.lang.String)
+numComments=12

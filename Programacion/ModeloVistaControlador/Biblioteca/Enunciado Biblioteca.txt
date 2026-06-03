@@ -1,0 +1,144 @@
+Examen de Programación Java – Modelo Vista Controlador
+
+Gestión de una Biblioteca
+
+Desarrolla una aplicación en Java para consola que permita gestionar una biblioteca mediante arquitectura en tres capas:
+
+Vista → interacción con el usuario usando Scanner y System.out.println
+
+Controlador → clase Singleton
+
+Modelo → clases de negocio y almacenamiento de datos
+
+🎯 Objetivo del proyecto
+
+La aplicación representará el funcionamiento básico de una biblioteca que dispone de libros y revistas, y usuarios registrados que pueden marcar favoritos.
+
+Existen dos tipos de publicaciones:
+
+Libro
+
+Revista
+
+Todas las publicaciones comparten información común, pero cada tipo tendrá además algún atributo propio.
+
+📦 1. Arquitectura del proyecto
+El proyecto debe estar organizado en paquetes:
+
+vista
+
+controlador
+
+modelo
+
+📚 2. Modelo de datos
+Clase abstracta Publicacion
+Debe contener como mínimo:
+
+código identificador
+
+título
+
+número de páginas
+
+precio
+
+Clase Libro
+Hereda de Publicacion y añade:
+
+autor
+
+género literario
+
+Clase Revista
+Hereda de Publicacion y añade:
+
+número de edición
+
+es mensual (sí/no)
+
+👤 3. Usuarios
+Clase Usuario con:
+
+dni
+
+nombre
+
+teléfono
+
+lista de publicaciones favoritas (vacía inicialmente)
+
+Cada usuario podrá guardar publicaciones favoritas.
+
+🧠 4. Almacenamiento en el Controlador
+El controlador (Singleton) almacenará:
+
+colección de publicaciones
+
+colección de usuarios
+
+Puedes usar ArrayList, HashSet, HashMap o estructuras similares.
+
+🧭 5. Funcionalidades obligatorias
+El menú principal permitirá:
+
+Dar de alta una publicación
+(el usuario elegirá si es Libro o Revista)
+
+Retirar una publicación del sistema
+
+Mostrar todas las publicaciones
+
+Mostrar sólo los libros
+
+Mostrar sólo las revistas
+
+Dar de alta usuario
+
+Añadir publicación favorita a un usuario
+
+Mostrar favoritos de un usuario
+
+Salir del programa
+
+🔍 6. Uso obligatorio de Comparator
+Debes crear comparadores:
+
+por precio ascendente (libros y revistas, listado de todas las publicaciones)
+
+por número de páginas (solo libros)
+
+por número de edición (solo revistas)
+
+🧱 7. Controlador Singleton
+La clase controlador debe implementarse como Singleton.
+
+🖥️ 8. Vista
+Toda la interacción será en modo texto usando:
+
+Scanner
+
+System.out.println()
+
+Debe existir un menú repetitivo hasta seleccionar salir.
+
+✔️ 9. Validaciones mínimas
+No permitir códigos de publicación repetidos.
+
+No permitir DNI repetidos.
+
+No añadir favoritos inexistentes.
+
+No retirar publicaciones que no existan.
+
+No añadir dos veces el mismo favorito al mismo usuario.
+
+📝 10. Entrega
+Entregar proyecto Java completo y ejecutable.
+
+🧮 11. Evaluación
+Modelo: Publicacion, Libro, Revista → 2 puntos
+
+Cada opción del menú (excepto salir) → 1 punto
+
+Total: 10 puntos
