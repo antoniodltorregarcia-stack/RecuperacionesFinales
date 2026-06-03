@@ -26,7 +26,6 @@ public class Controlador{  //Actua de puente entre vista y modelo
         return taller;
     }
     
-    
     //Añadir Cliente
     public void addCliente(String dni, String nombre, String apellidos, String email, String telefono) {
         Cliente c = new Cliente (dni, nombre, apellidos, email, telefono);

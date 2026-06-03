@@ -8,15 +8,18 @@ public class Vista {
 
     private Scanner sc;
     private Controlador controlador;
-
-    public Vista() {
+    
+    public static void main(String[] args) {
+        Vista v = new Vista();
+        v.Vista();
+    }
+    
+    public void Vista () {
+        int opcion = 0;
+        
         sc = new Scanner(System.in);
         controlador = Controlador.getInstancia();
-    }
-
-    public void iniciar() {
-        int opcion = 0;
-
+        
         do {
             mostrarMenu();
             opcion = Integer.parseInt(sc.nextLine());
