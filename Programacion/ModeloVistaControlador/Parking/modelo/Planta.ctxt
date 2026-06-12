@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Planta
+comment1.params=numeroPlanta
+comment1.target=Planta(int)
+comment2.params=
+comment2.target=int\ getNumeroPlanta()
+comment3.params=numeroPlanta
+comment3.target=void\ setNumeroPlanta(int)
+comment4.params=
+comment4.target=java.util.Map\ getMapaPlazas()
+comment5.params=p
+comment5.target=void\ addPlaza(Plaza)
+numComments=6

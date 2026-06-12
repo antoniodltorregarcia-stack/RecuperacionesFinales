@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Coche
+comment1.params=matricula\ horaFechaEntrada\ horaFechaSalida
+comment1.target=Coche(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getMatricula()
+comment3.params=matricula
+comment3.target=void\ setMatricula(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getHoraFechaEntrada()
+comment5.params=horaFechaEntrada
+comment5.target=void\ setHoraFechaEntrada(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ getHoraFechaSalida()
+comment7.params=horaFechaSalida
+comment7.target=void\ setHoraFechaSalida(java.lang.String)
+numComments=8

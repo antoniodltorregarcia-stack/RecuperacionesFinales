@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Controlador
+comment1.params=
+comment1.target=Controlador()
+comment2.params=
+comment2.target=Controlador\ getInstancia()
+comment3.params=matricula\ horaFechaEntrada\ horaFechaSalida
+comment3.target=void\ addCoche(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment4.params=matricula
+comment4.target=boolean\ eliminarCoche(java.lang.String)
+numComments=5

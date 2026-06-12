@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Plaza
+comment1.params=numero\ ocupada
+comment1.target=Plaza(int,\ boolean)
+comment2.params=
+comment2.target=int\ getNumero()
+comment3.params=numero
+comment3.target=void\ setNumero(int)
+comment4.params=
+comment4.target=boolean\ getOcupada()
+comment5.params=ocupada
+comment5.target=void\ setOcupada(boolean)
+numComments=6

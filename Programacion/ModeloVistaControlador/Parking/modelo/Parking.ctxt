@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Parking
+comment1.params=precioPorHora
+comment1.target=Parking(double)
+comment2.params=
+comment2.target=double\ getPrecioPorHora()
+comment3.params=precioPorHora
+comment3.target=void\ setPrecioPorHora(double)
+comment4.params=
+comment4.target=java.util.List\ getListaPlantas()
+comment5.params=p
+comment5.target=void\ addPlanta(Planta)
+numComments=6
