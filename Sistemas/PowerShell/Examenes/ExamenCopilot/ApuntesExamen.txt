@@ -1,0 +1,216 @@
+Antonio, aquí tienes **unos apuntes completos, claros y listos para estudiar**, explicando **todos los pasos de creación de usuarios y grupos** usando el módulo **LocalAccounts**, tal como se hace en un examen real.  
+Al final tienes un **glosario** con el significado de todos los comandos.
+
+---
+
+# 📘 **APUNTES: Creación de Usuarios y Grupos en PowerShell (LocalAccounts)**
+
+Estos apuntes están pensados para que puedas estudiar rápido y entender **qué hace cada comando**, **por qué se usa** y **qué pasos debes seguir** en un examen.
+
+---
+
+# 🧩 1. CREAR UN USUARIO LOCAL
+
+## ✔️ Paso 1: Pedir el nombre del usuario
+```powershell
+$nombre = Read-Host "Introduce el nombre del usuario"
+```
+- `Read-Host` sirve para pedir datos al usuario.  
+- Se guarda en la variable `$nombre`.
+
+---
+
+## ✔️ Paso 2: Validar que no esté vacío
+```powershell
+if ([string]::IsNullOrWhiteSpace($nombre)) { return }
+```
+- Evita errores si el usuario pulsa Enter sin escribir nada.
+
+---
+
+## ✔️ Paso 3: Comprobar si el usuario existe
+```powershell
+Get-LocalUser -Name $nombre -ErrorAction SilentlyContinue
+```
+- Si existe → devuelve un objeto usuario.  
+- Si no existe → devuelve **nada**, pero sin error gracias a `-ErrorAction SilentlyContinue`.
+
+---
+
+## ✔️ Paso 4: Crear el usuario
+```powershell
+New-LocalUser -Name $nombre -NoPassword
+```
+- Crea un usuario local sin contraseña.  
+- En un examen es suficiente.
+
+---
+
+## ✔️ Paso 5: Habilitar o deshabilitar el usuario
+```powershell
+Enable-LocalUser -Name $nombre
+Disable-LocalUser -Name $nombre
+```
+- Permite activar o desactivar la cuenta.
+
+---
+
+# 🧩 2. CREAR UN GRUPO LOCAL
+
+## ✔️ Paso 1: Pedir el nombre del grupo
+```powershell
+$grupo = Read-Host "Introduce el nombre del grupo"
+```
+
+---
+
+## ✔️ Paso 2: Comprobar si el grupo existe
+```powershell
+Get-LocalGroup -Name $grupo -ErrorAction SilentlyContinue
+```
+
+---
+
+## ✔️ Paso 3: Crear el grupo
+```powershell
+New-LocalGroup -Name $grupo
+```
+
+---
+
+## ✔️ Paso 4: Añadir un usuario al grupo
+```powershell
+Add-LocalGroupMember -Group $grupo -Member $usuario
+```
+- Añade un usuario existente a un grupo existente.
+
+---
+
+# 🧩 3. MOSTRAR Y MODIFICAR PERMISOS DE UNA RUTA
+
+## ✔️ Paso 1: Obtener permisos actuales
+```powershell
+$acl = Get-Acl $ruta
+$acl.Access
+```
+
+---
+
+## ✔️ Paso 2: Crear una nueva regla de permisos
+```powershell
+$rule = New-Object System.Security.AccessControl.FileSystemAccessRule($usuario, $permiso, "Allow")
+```
+
+---
+
+## ✔️ Paso 3: Añadir la regla
+```powershell
+$acl.AddAccessRule($rule)
+Set-Acl -Path $ruta -AclObject $acl
+```
+
+---
+
+# 🧩 4. BUSCAR Y DETENER PROCESOS
+
+## ✔️ Buscar un proceso
+```powershell
+Get-Process -Name $nombre
+```
+
+---
+
+## ✔️ Detener un proceso
+```powershell
+Stop-Process -Name $nombre -Force
+```
+
+---
+
+# 🧩 5. CONTROLAR SERVICIOS
+
+## ✔️ Ver estado de un servicio
+```powershell
+Get-Service -Name $serv
+```
+
+---
+
+## ✔️ Iniciar un servicio
+```powershell
+Start-Service $serv
+```
+
+---
+
+## ✔️ Detener un servicio
+```powershell
+Stop-Service $serv
+```
+
+---
+
+# 📚 **GLOSARIO DE COMANDOS (EXPLICADO PARA EXAMEN)**
+
+### **Get-LocalUser**  
+Obtiene información de un usuario local.  
+Sirve para comprobar si existe.
+
+### **New-LocalUser**  
+Crea un usuario local nuevo.
+
+### **Enable-LocalUser**  
+Habilita una cuenta deshabilitada.
+
+### **Disable-LocalUser**  
+Deshabilita una cuenta.
+
+### **Get-LocalGroup**  
+Obtiene información de un grupo local.
+
+### **New-LocalGroup**  
+Crea un grupo local nuevo.
+
+### **Add-LocalGroupMember**  
+Añade un usuario a un grupo.
+
+### **Get-Acl**  
+Obtiene los permisos de un archivo o carpeta.
+
+### **Set-Acl**  
+Aplica nuevos permisos a un archivo o carpeta.
+
+### **Get-Process**  
+Muestra procesos en ejecución.
+
+### **Stop-Process**  
+Detiene un proceso.
+
+### **Get-Service**  
+Muestra servicios del sistema.
+
+### **Start-Service**  
+Inicia un servicio.
+
+### **Stop-Service**  
+Detiene un servicio.
+
+### **Read-Host**  
+Pide datos al usuario.
+
+### **Test-Path**  
+Comprueba si una ruta existe.
+
+### **Format-Table**  
+Da formato en tabla a la salida.
+
+---
+
+# 🎯 ¿Quieres ahora que te haga una **chuleta resumida** para llevar al examen?  
+Puedo prepararte:
+
+- **Chuleta ultra‑resumida**  
+- **Chuleta con ejemplos**  
+- **Chuleta solo de comandos**  
+
+Dime cuál quieres.
